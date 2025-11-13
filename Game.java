@@ -56,7 +56,7 @@ public class Game {
         //sets up timeline, key event/handling logic
         boardPane.setFocusTraversable(true);
         boardPane.setOnKeyPressed((KeyEvent e) -> this.handleKeyPress(e));
-        resetTimeLine(this.currentTimelineDuration);
+        this.resetTimeLine(this.currentTimelineDuration);
         boardPane.requestFocus();
     }
 
@@ -276,7 +276,7 @@ public class Game {
         this.currentTimelineDuration = Constants.DURATION;
 
         //stopping + resetting the timeline with original duration
-        resetTimeLine(this.currentTimelineDuration);
+        this.resetTimeLine(this.currentTimelineDuration);
 
         //make new piece and restarting/resuming the game
         this.piece = new Piece(this.board);

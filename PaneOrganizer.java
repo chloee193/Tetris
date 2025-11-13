@@ -16,7 +16,6 @@ public class PaneOrganizer {
     private final Pane borderPane;
     private final Pane boardPane;
     private final Label scoreLabel = new Label("Score: 0");
-    private Game game;
     private Label levelLabel;
 
     /**
@@ -50,7 +49,7 @@ public class PaneOrganizer {
 
         //initializes the game
         Board board = new Board(Constants.PLAYABLE_ROWS, Constants.PLAYABLE_COLS, this.boardPane);
-        this.game = new Game(board, this.boardPane, this.scoreLabel, this.levelLabel);
+        Game game = new Game(board, this.boardPane, this.scoreLabel, this.levelLabel);
     }
 
     /**

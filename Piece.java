@@ -13,7 +13,7 @@ import java.util.List;
 public class Piece {
     private final Square[] squareArray; //squares that make up a given piece
     private final Board board;
-    private int pieceType;
+
 
     /**
      * Constructs a piece and it's initial 4 squares
@@ -43,11 +43,10 @@ public class Piece {
         int initialCol = Constants.PLAYABLE_COLS/2 -1;
         int initialRow = 0;
 
-        int randomPiece = (int)(Math.random() * PIECE_COORDS.length);
-        this.pieceType = randomPiece;
-        int[][] positioning = PIECE_COORDS[randomPiece];
+        int pieceType = (int)(Math.random() * PIECE_COORDS.length);
+        int[][] positioning = PIECE_COORDS[pieceType];
         Color[] pieceColor = getPieceColors(this.board.isColorblindMode());
-        Color color = pieceColor[randomPiece];
+        Color color = pieceColor[pieceType];
 
         for (int i = 0; i < this.squareArray.length; i++) {
             int col = initialCol + positioning[i][0];
