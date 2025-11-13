@@ -1,10 +1,27 @@
 Tetris README
 
-Overview:
+Overview: I designed a tetris with 20 rows and 10 columns for the main playable board. There are
+7 different types of pieces that can randomly spawn, and they can be rotated, moved left/right/down,
+and dropped to the bottom. If more than one row is cleared in a turn, the player gets extra points,
+and even more for a tetris. There is a color blind and normal version, as well as a score label,
+level label and a quit button. Levels basically mean how fast the piece is moving down the screen,
+and level is determined by how many rows have been cleared in a given game. The player wins the game
+at 100k, which is also an src functionality to help combat the possibly addictive quality of tetris.
 
-Design Choices:
+Design Choices: The game has a feature that the player can switch to a color blind friendly mode,
+which is intended to make the game accessible for anyone to be able to see the distinctions of the
+pieces.
+I picked the BorderPane layout for the label pane because it allowed placement of the labels at
+either edge of the screen, which was good for layout and visually. I thought it kept it readable and
+was a clean way to get both the labels on the screen and in the same "row" but separated.
+For row clearing, the grid takes the occupied status and color of the row above, and copies it to
+the row below. I thought this way made the most sense because it gives the visual and effect of the
+squares "moving down" but less complicated than just moving all the squares.
+The game updates with a timeline, which the keyframes are deleted and recreated when the duration
+changes. This felt like the best way to do it because it's an easy way to reset the keyframes when
+the level (and duration) changes or resets to it's initial value.
 
-Known Bugs:
+Known Bugs: N/A
 
 Extra Credit: - I included a score counter in the top right that adds 100 every time a row is
 removed, 400 for two rows, 900 for three rows and 2000 for 4 rows (a tetris). I did that math so
